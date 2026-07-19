@@ -20,11 +20,13 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-
+          
       - name: Install and Build 🏗️
         run: |
           npm ci
           npm run build
+          # Copia el index.html como 404.html para que React Router v7 funcione sin almohadillas
+          cp dist/index.html dist/404.html
 
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4

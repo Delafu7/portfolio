@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dracula-bg: #282a36;
+  --color-dracula-current: #44475a;
+  --color-dracula-fg: #f8f8f2;
+  --color-dracula-comment: #6272a4;
+  --color-dracula-cyan: #8be9fd;
+  --color-dracula-green: #50fa7b;
+  --color-dracula-orange: #ffb86c;
+  --color-dracula-pink: #ff79c6;
+  --color-dracula-purple: #bd93f9;
+  --color-dracula-red: #ff5555;
+  --color-dracula-yellow: #f1fa8c;
+
+  --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", ui-monospace, monospace;
+}
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-dracula-comment) var(--color-dracula-bg);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-dracula-bg);
+    color: var(--color-dracula-fg);
+    font-family: var(--font-mono);
+  }
+
+  ::selection {
+    background-color: var(--color-dracula-purple);
+    color: var(--color-dracula-bg);
+  }
+}
+
+@layer utilities {
+  .text-glow-green {
+    text-shadow: 0 0 10px rgba(80, 250, 123, 0.5), 0 0 20px rgba(80, 250, 123, 0.2);
+  }
+  .text-glow-purple {
+    text-shadow: 0 0 10px rgba(189, 147, 249, 0.5), 0 0 20px rgba(189, 147, 249, 0.2);
+  }
+  .text-glow-cyan {
+    text-shadow: 0 0 10px rgba(139, 233, 253, 0.5), 0 0 20px rgba(139, 233, 253, 0.2);
+  }
+  .border-glow-green {
+    box-shadow: 0 0 8px rgba(80, 250, 123, 0.3), inset 0 0 8px rgba(80, 250, 123, 0.05);
+  }
+  .border-glow-purple {
+    box-shadow: 0 0 8px rgba(189, 147, 249, 0.3), inset 0 0 8px rgba(189, 147, 249, 0.05);
+  }
+
+  .animate-blink {
+    animation: blink 1s step-end infinite;
+  }
+  .animate-scanline {
+    animation: scanline 8s linear infinite;
+  }
+  .animate-pulse-dot {
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+  .animate-pulse-red {
+    animation: pulse-red 1s ease-in-out infinite;
+  }
+  .animate-chaos-flash {
+    animation: chaos-flash 0.3s ease-in-out;
+  }
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out both;
+  }
+
+  .pipeline-connector {
+    position: relative;
+  }
+  .pipeline-connector::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -1.5rem;
+    width: 1.5rem;
+    height: 2px;
+    background: var(--color-dracula-comment);
+  }
+
+  .env-key { color: var(--color-dracula-purple); }
+  .env-eq { color: var(--color-dracula-fg); }
+  .env-str { color: var(--color-dracula-green); }
+  .env-comment { color: var(--color-dracula-comment); }
+
+  .ring-chaos {
+    animation: ring-chaos 0.6s ease-in-out;
+  }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+@keyframes pulse-red {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px rgba(255, 85, 85, 0.6); }
+  50% { opacity: 0.5; box-shadow: 0 0 12px rgba(255, 85, 85, 0.9); }
+}
+@keyframes chaos-flash {
+  0% { opacity: 1; }
+  25% { background-color: rgba(255, 85, 85, 0.08); }
+  50% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes ring-chaos {
+  0% { box-shadow: 0 0 0 0 rgba(255, 85, 85, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 85, 85, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 85, 85, 0); }
+}

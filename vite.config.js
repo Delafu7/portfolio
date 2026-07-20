@@ -8,8 +8,9 @@ export default defineConfig({
     target: "esnext",
     minify: "esbuild",
   },
-  // GitHub Pages serves this as a project site under /portfolio/, but
-  // Cloudflare Pages serves it from the domain root — CF_PAGES is set
-  // automatically in Cloudflare's build environment.
-  base: process.env.CF_PAGES ? "/" : "/portfolio/",
+  // GitHub Pages serves this as a project site under /portfolio/; every
+  // other host (Cloudflare Workers Builds, local dev) serves it from the
+  // domain root. GITHUB_ACTIONS is always set to "true" by GitHub's own
+  // runners, unlike Cloudflare-specific env vars which vary by build system.
+  base: process.env.GITHUB_ACTIONS ? "/portfolio/" : "/",
 });

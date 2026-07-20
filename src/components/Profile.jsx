@@ -57,7 +57,7 @@ export default function Profile() {
             </a>
 
             {/* Social links as env config */}
-            <div className="w-full max-w-md overflow-hidden rounded-lg border border-dracula-current bg-dracula-bg/80">
+            <div className="w-full max-w-md overflow-hidden rounded-lg border border-dracula-current bg-dracula-bg/80 text-left">
               <div className="flex items-center gap-2 border-b border-dracula-current px-4 py-2">
                 <span className="h-2.5 w-2.5 rounded-full bg-dracula-red" />
                 <span className="h-2.5 w-2.5 rounded-full bg-dracula-yellow" />

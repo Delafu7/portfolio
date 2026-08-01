@@ -99,7 +99,8 @@ export default function DeployStage() {
 
           {/* Health Status */}
           <div
-            className={`rounded-lg border p-5 transition-all sm:col-span-2 lg:col-span-1 ${
+            style={{ "--tui-color": isHealthy ? "var(--color-dracula-green)" : "var(--color-dracula-red)" }}
+            className={`tui-frame rounded-lg border p-5 transition-all sm:col-span-2 lg:col-span-1 ${
               isHealthy
                 ? "border-dracula-green/30 border-glow-green"
                 : "border-dracula-red/50 animate-pulse-red ring-chaos"

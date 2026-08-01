@@ -9,7 +9,7 @@ import PipelineDivider from "./components/PipelineDivider";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-dracula-bg text-dracula-fg">
+    <div className="min-h-screen text-dracula-fg">
       <Navbar />
       <main>
         <Hero />

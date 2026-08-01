@@ -94,7 +94,7 @@ export default function Hero() {
         </p>
 
         {/* Health Check Widget */}
-        <div className="w-full max-w-3xl overflow-hidden rounded-lg border border-dracula-current bg-dracula-bg shadow-2xl border-glow-green">
+        <div className="tui-frame w-full max-w-3xl overflow-hidden rounded-lg border border-dracula-current bg-dracula-bg shadow-2xl border-glow-green">
           {/* Terminal header */}
           <div className="flex items-center justify-between border-b border-dracula-current px-4 py-2">
             <div className="flex items-center gap-2">

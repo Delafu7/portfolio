@@ -162,7 +162,10 @@ export default function QATestStage() {
           </div>
 
           {/* Right: Terminal log */}
-          <div className="overflow-hidden rounded-lg border border-dracula-current bg-dracula-bg shadow-2xl">
+          <div
+            style={{ "--tui-color": "var(--color-dracula-purple)" }}
+            className="tui-frame overflow-hidden rounded-lg border border-dracula-current bg-dracula-bg shadow-2xl"
+          >
             <div className="flex items-center justify-between border-b border-dracula-current px-4 py-2">
               <div className="flex items-center gap-2">
                 <span className="h-3 w-3 rounded-full bg-dracula-red" />

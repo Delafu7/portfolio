@@ -9,8 +9,6 @@ export default function DeployStage() {
   const [logs, setLogs] = useState([]);
   const [currentLog, setCurrentLog] = useState("");
   const [logIdx, setLogIdx] = useState(0);
-  const [formSent, setFormSent] = useState(false);
-  const [formSending, setFormSending] = useState(false);
   const logRef = useRef(null);
 
   const chaosLogs = t("deploy.chaosLogs");
@@ -48,15 +46,6 @@ export default function DeployStage() {
   useEffect(() => {
     if (logRef.current) logRef.current.scrollTop = logRef.current.scrollHeight;
   }, [logs, currentLog]);
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    setFormSending(true);
-    setTimeout(() => {
-      setFormSending(false);
-      setFormSent(true);
-    }, 1500);
-  };
 
   const isHealthy = status === "healthy" || status === "healed";
   const statusText = status === "chaos"
@@ -243,55 +232,6 @@ export default function DeployStage() {
             </div>
           </div>
         )}
-
-        {/* Contact form */}
-        <div className="rounded-lg border border-dracula-current bg-dracula-current/10 p-6 sm:p-8">
-          <h3 className="mb-1 text-lg font-bold text-dracula-fg">
-            {t("deploy.contactTitle")}
-          </h3>
-          <p className="mb-6 text-sm text-dracula-comment">
-            {t("deploy.contactDesc")}
-          </p>
-
-          {formSent ? (
-            <div className="rounded border border-dracula-green/30 bg-dracula-green/5 p-6 text-center border-glow-green">
-              <p className="text-base font-bold text-dracula-green text-glow-green">
-                {t("deploy.success")}
-              </p>
-              <p className="mt-1 text-xs text-dracula-fg/60">exit 0</p>
-            </div>
-          ) : (
-            <form onSubmit={handleFormSubmit} className="flex flex-col gap-4">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <input
-                  type="text"
-                  placeholder={t("deploy.name")}
-                  required
-                  className="rounded border border-dracula-current bg-dracula-bg/60 px-4 py-3 text-sm text-dracula-fg placeholder:text-dracula-comment/50 outline-none transition-colors focus:border-dracula-purple"
-                />
-                <input
-                  type="email"
-                  placeholder={t("deploy.email")}
-                  required
-                  className="rounded border border-dracula-current bg-dracula-bg/60 px-4 py-3 text-sm text-dracula-fg placeholder:text-dracula-comment/50 outline-none transition-colors focus:border-dracula-purple"
-                />
-              </div>
-              <textarea
-                placeholder={t("deploy.message")}
-                required
-                rows={4}
-                className="resize-none rounded border border-dracula-current bg-dracula-bg/60 px-4 py-3 text-sm text-dracula-fg placeholder:text-dracula-comment/50 outline-none transition-colors focus:border-dracula-purple"
-              />
-              <button
-                type="submit"
-                disabled={formSending}
-                className="self-start rounded border border-dracula-green bg-dracula-green/10 px-6 py-3 text-sm font-bold text-dracula-green transition-all hover:bg-dracula-green/20 hover:shadow-[0_0_20px_rgba(80,250,123,0.3)] disabled:opacity-50 active:scale-95"
-              >
-                {formSending ? t("deploy.sending") : t("deploy.send")}
-              </button>
-            </form>
-          )}
-        </div>
       </div>
     </section>
   );

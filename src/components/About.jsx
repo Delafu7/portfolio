@@ -29,28 +29,40 @@ export default function About() {
           {t("about.description")}
         </p>
 
-        {/* Skills grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {Object.entries(SKILL_DATA).map(([category, skills]) => (
-            <div
-              key={category}
-              className="rounded-lg border border-dracula-current bg-dracula-current/20 p-5 transition-all hover:border-dracula-purple/50 hover:border-glow-purple"
-            >
-              <h3 className="mb-4 text-sm font-bold text-dracula-purple">
-                {t(`about.skills.${category}`)}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded bg-dracula-current/50 px-2.5 py-1 text-xs text-dracula-fg/80"
-                  >
-                    {skill}
+        {/* Skills bento grid */}
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2">
+          {Object.entries(SKILL_DATA).map(([category, skills], i) => {
+            const isFeatured = category === "languages";
+            return (
+              <div
+                key={category}
+                className={`tui-frame-hover rounded-lg border border-dracula-current bg-dracula-current/20 p-5 transition-all hover:border-dracula-purple/50 hover:border-glow-purple ${
+                  isFeatured ? "sm:col-span-2 lg:col-span-2 lg:row-span-2 p-6" : "lg:col-span-1"
+                }`}
+              >
+                <div className="mb-4 flex items-center gap-2">
+                  <span className="text-[10px] font-bold text-dracula-comment">
+                    0{i + 1}
                   </span>
-                ))}
+                  <h3 className={`font-bold text-dracula-purple ${isFeatured ? "text-base" : "text-sm"}`}>
+                    {t(`about.skills.${category}`)}
+                  </h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className={`rounded bg-dracula-current/50 text-dracula-fg/80 ${
+                        isFeatured ? "px-3 py-1.5 text-sm" : "px-2.5 py-1 text-xs"
+                      }`}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

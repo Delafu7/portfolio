@@ -70,13 +70,22 @@ export const translations = {
           desc: "A real-time campaign manager for Dungeon Masters — a live combat tracker, spellcasting & inventory systems, and a drag-and-drop battle map synced instantly to every player's screen.",
         },
         {
+          desc: "A self-hosted test case management app: nested suites, versioned test cases, testing cycles with a step-by-step execution runner, defect tracking and exports to JSON, Markdown or Notion — with every API event shipped to an ELK stack for observability.",
+        },
+        {
+          desc: "A self-contained document conversion service built with FastAPI and Docker — HTML → Markdown, Markdown → PDF and PDF → Markdown over a small HTTP API, plus an interactive terminal menu for offline use.",
+        },
+        {
+          desc: "A self-paced, open-source course for learning software testing and Playwright automation — from testing fundamentals and QA process to API testing and CI, with 20 hands-on challenges. Fully translated into English, Spanish and French.",
+        },
+        {
           desc: "A containerized systems-administration project: a Flask app backed by MySQL, Redis and Meilisearch, deployed to Kubernetes with autoscaling, network policies and custom metrics.",
         },
         {
-          desc: "A Tetris clone built from scratch with Pygame — a full start / play / game-over flow, packaged into a standalone executable.",
+          desc: "A Flask-based control interface exploring AI-driven behavior for an R2D2-style robot, from the browser UI down to the control logic.",
         },
         {
-          desc: "A Flask-based control interface exploring AI-driven behavior for an R2D2-style robot, from the browser UI down to the control logic.",
+          desc: "A Tetris clone built from scratch with Pygame — a full start / play / game-over flow, packaged into a standalone executable.",
         },
       ],
     },
@@ -229,13 +238,22 @@ export const translations = {
           desc: "Un gestor de campanas en tiempo real para Directores de Juego de D&D: seguimiento de combate en vivo, sistemas de conjuros e inventario, y un mapa de batalla con arrastrar-y-soltar sincronizado al instante con cada jugador.",
         },
         {
+          desc: "Una aplicacion autoalojada de gestion de casos de prueba: suites anidadas, ciclos de testing con un ejecutor paso a paso, seguimiento de defectos y exportacion a JSON, Markdown o Notion, con cada evento de la API enviado a un stack ELK para observabilidad.",
+        },
+        {
+          desc: "Un servicio de conversion de documentos con FastAPI y Docker: HTML → Markdown, Markdown → PDF y PDF → Markdown mediante una pequena API HTTP, ademas de un menu interactivo de terminal para uso offline.",
+        },
+        {
+          desc: "Un curso open source y autodidacta para aprender testing de software y automatizacion con Playwright: desde los fundamentos y el proceso QA hasta testing de APIs y CI, con 20 retos practicos. Traducido al ingles, espanol y frances.",
+        },
+        {
           desc: "Un proyecto de administracion de sistemas containerizado: una app Flask respaldada por MySQL, Redis y Meilisearch, desplegada en Kubernetes con autoescalado, politicas de red y metricas personalizadas.",
         },
         {
-          desc: "Un clon de Tetris construido desde cero con Pygame, con flujo completo de inicio / partida / final, empaquetado como ejecutable independiente.",
+          desc: "Una interfaz de control basada en Flask que explora comportamiento impulsado por IA para un robot estilo R2D2, desde la interfaz web hasta la logica de control.",
         },
         {
-          desc: "Una interfaz de control basada en Flask que explora comportamiento impulsado por IA para un robot estilo R2D2, desde la interfaz web hasta la logica de control.",
+          desc: "Un clon de Tetris construido desde cero con Pygame, con flujo completo de inicio / partida / final, empaquetado como ejecutable independiente.",
         },
       ],
     },

@@ -82,9 +82,6 @@ export const translations = {
           desc: "A containerized systems-administration project: a Flask app backed by MySQL, Redis and Meilisearch, deployed to Kubernetes with autoscaling, network policies and custom metrics.",
         },
         {
-          desc: "A Flask-based control interface exploring AI-driven behavior for an R2D2-style robot, from the browser UI down to the control logic.",
-        },
-        {
           desc: "A Tetris clone built from scratch with Pygame — a full start / play / game-over flow, packaged into a standalone executable.",
         },
       ],
@@ -248,9 +245,6 @@ export const translations = {
         },
         {
           desc: "Un proyecto de administracion de sistemas containerizado: una app Flask respaldada por MySQL, Redis y Meilisearch, desplegada en Kubernetes con autoescalado, politicas de red y metricas personalizadas.",
-        },
-        {
-          desc: "Una interfaz de control basada en Flask que explora comportamiento impulsado por IA para un robot estilo R2D2, desde la interfaz web hasta la logica de control.",
         },
         {
           desc: "Un clon de Tetris construido desde cero con Pygame, con flujo completo de inicio / partida / final, empaquetado como ejecutable independiente.",

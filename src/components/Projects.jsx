@@ -34,12 +34,6 @@ const REPO_META = [
     tags: ["Docker", "Kubernetes", "MySQL", "Redis"],
   },
   {
-    name: "R2D2_IA",
-    repoUrl: "https://github.com/Delafu7/R2D2_IA",
-    updated: "Oct 2025",
-    tags: ["Python", "Flask", "AI/Robotics"],
-  },
-  {
     name: "TetrisGame",
     repoUrl: "https://github.com/Delafu7/TetrisGame",
     updated: "Sep 2025",
